@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNDENEMY</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/4555a5fa4f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="welcome">
+        <h1>welcome! Please enter your preferred stats</h1>
+    </div>
+
+        <form class="form-container" onsubmit="submitForm(event)">
+
+            <label class="custom_selector">
+                Select size
+                    <select name="Size" class="size">
+                    <option value="0">Tiny</option>
+                    <option value="1">Small</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Large</option>
+                    <option value="4">Huge</option>
+                    <option value="5">Gargantuan</option>
+                </select>
+            </label>
+
+            <div class="custom-num ACdiv">
+                <img class="AC" src="../static/images/AC.png" alt="AC">
+                <i class="fa fa-angle-up arr-up" aria-hidden="true"></i>
+                <input 
+                    type="number"
+                    class="num-input"
+                    id="ac" 
+                    name="ac"
+                    min="1"
+                    max="99"
+                    value="8"
+                    data-color="#21d99b"
+                />
+                <i class="fa fa-angle-down arr-down" aria-hidden="true"></i>
+            </div>
+
+
+            <div class="custom-num HPdiv">
+                <img class="HP" src="../static/images/HP.png" alt="HP">
+                <i class="fa fa-angle-up arr-up" aria-hidden="true"></i>
+                <input 
+                    type="number"
+                    class="num-input"
+                    id="hp" 
+                    name="hp"
+                    min="1"
+                    max="999"
+                    value="8"
+                    data-color="#21d99b"
+                />
+                <i class="fa fa-angle-down arr-down" aria-hidden="true"></i>
+            </div>
+
+
+            <div class="custom-num firstStats">
+                <h3>str</h3>
+                <i class="fa fa-angle-up arr-up" aria-hidden="true"></i>
+                <input 
+                    type="number"
+                    class="num-input"
+                    id="str" 
+                    name="str"
+                    min="1"
+                    max="99"
+                    value="8"
+                    data-color="#21d99b"
+                />
+                <i class="fa fa-angle-down arr-down" aria-hidden="true"></i>
+            </div>
+
+            <div class="custom-num firstStats">
+                <h3>dex</h3>
+                <i class="fa fa-angle-up arr-up" aria-hidden="true"></i>
+                <input 
+                    type="number"
+                    class="num-input"
+                    id="dex" 
+                    name="dex"
+                    min="1"
+                    max="99"
+                    value="8"
+                    data-color="#21d99b"
+                />
+                <i class="fa fa-angle-down arr-down" aria-hidden="true"></i>
+            </div>
+
+            <div class="custom-num firstStats">
+                <h3>con</h3>
+                <i class="fa fa-angle-up arr-up" aria-hidden="true"></i>
+                <input 
+                    type="number"
+                    class="num-input"
+                    id="con" 
+                    name="con"
+                    min="1"
+                    max="99"
+                    value="8"
+                    data-color="#21d99b"
+                />
+                <i class="fa fa-angle-down arr-down" aria-hidden="true"></i>
+            </div>
+
+            <div class="custom-num secondStats">
+                <h3>int</h3>
+                <i class="fa fa-angle-up arr-up" aria-hidden="true"></i>
+                <input 
+                    type="number"
+                    class="num-input"
+                    id="int" 
+                    name="int"
+                    min="1"
+                    max="99"
+                    value="8"
+                    data-color="#21d99b"
+                />
+                <i class="fa fa-angle-down arr-down" aria-hidden="true"></i>
+            </div>
+
+            <div class="custom-num secondStats">
+                <h3>wis</h3>
+                <i class="fa fa-angle-up arr-up" aria-hidden="true"></i>
+                <input 
+                    type="number"
+                    class="num-input"
+                    id="wis" 
+                    name="wis"
+                    min="1"
+                    max="99"
+                    value="8"
+                    data-color="#21d99b"
+                />
+                <i class="fa fa-angle-down arr-down" aria-hidden="true"></i>
+            </div>
+
+            <div class="custom-num secondStats">
+                <h3>cha</h3>
+                <i class="fa fa-angle-up arr-up" aria-hidden="true"></i>
+                <input 
+                    type="number"
+                    class="num-input"
+                    id="cha" 
+                    name="cha"
+                    min="1"
+                    max="99"
+                    value="8"
+                    data-color="#21d99b"
+                />
+                <i class="fa fa-angle-down arr-down" aria-hidden="true"></i>
+            </div>
+
+
+
+
+            <div class="tile">
+                <input type="checkbox" id="legendary" name="legendary" value="true">
+                <label for="legendary">
+                    <i class="fa-solid fa-medal fa-xl"></i>
+                    <h6>is legendary</h6>
+                </label>
+            </div>
+            <div class="tile">
+                <input type="checkbox" id="canFly" name="canFly" value="true">
+                <label for="canFly">
+                    <i class="fa-solid fa-dove fa-xl"></i>
+                    <h6>flies</h6>
+                </label>
+            </div>
+            <div class="tile">
+                <input type="checkbox" id="canSwim" name="canSwim" value="true">
+                <label for="canSwim">
+                    <i class="fa-solid fa-fish fa-xl"></i>
+                    <h6>swims</h6>
+                </label>
+            </div>
+
+            <div class="result" id="result"></div>
+
+            <input type="submit" class="submitButton" name="submit" value="Get Enemy"/>
+
+            <h2 class="WIP">warning! this website is WIP, some functionality might be not what you expect (e.g. flying goblins or swimming demons)</h2>
+        </form>
+    </div>
+
+
+    <script>
+        async function submitForm(event) {
+            event.preventDefault();
+
+            const formData = new FormData(event.target);
+            const data = {
+                features: [[
+                    parseInt(formData.get('Size')),
+                    parseInt(formData.get('ac')),
+                    parseInt(formData.get('hp')),
+                    formData.get('legendary') ? 1 : 0,
+                    parseFloat(formData.get('str')),
+                    parseFloat(formData.get('dex')),
+                    parseFloat(formData.get('con')),
+                    parseFloat(formData.get('int')),
+                    parseFloat(formData.get('wis')),
+                    parseFloat(formData.get('cha')),
+                    formData.get('canFly') ? 1 : 0,
+                    formData.get('canSwim') ? 1 : 0
+                ]]
+            };
+
+            const response = await fetch('/api/enemy', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+            displayResult(result);
+        }
+
+        function displayResult(result) {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `
+                <p class="enemy1grid">Enemy suggestion 1: <a href="${result.enemy_link1}" target="_blank">${result.enemy_name1}</a></p>
+                <p class="enemy2grid">Enemy suggestion 2: <a href="${result.enemy_link2}" target="_blank">${result.enemy_name2}</a></p>
+                <p class="enemy3grid">Enemy suggestion 3: <a href="${result.enemy_link3}" target="_blank">${result.enemy_name3}</a></p>
+            `;
+        }
+    </script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
